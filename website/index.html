@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+	<head>
+		<!-- Meta -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<!-- Informations -->
+		<meta name="copyright" content="D4G-G5 © 2025 | Tous droits réservés">
+	
+		<!-- Title -->
+		<title>Design4Green 2025</title>
+	
+		<!-- CSS -->
+		<link rel="stylesheet" href="../css/style.css">
+	</head>
+	
+	<body>
+		<h1>Design4Green - Groupe 5 - 2025</h1>
+			
+		<form id="form">
+			<textarea id="text" placeholder="Texte ..." maxlength="4000"></textarea>
+			
+			<div class="textarea-footer">
+				<small id="charCount">0/4000 caractères</small>
+				<label class="optimized-label">
+					<input type="checkbox" id="optimized">
+					<span class="mode-optimise">Optimisation</span>
+				</label>
+			</div>
+	
+			<button type="button" id="btn">Résumer</button>
+		</form>
+	
+		<p class="summary-label" id="summaryLabel">Résumer :</p>
+	
+		<div id="output" class="result">
+			<p><span id="summary"></span></p>
+		</div>
+		
+		<div>
+			<button type="button" id="copyBtnOutput" class="copy-btn">Copier</button>
+		</div>
+	
+		<div id="metrics">
+			Énergie consommée : <span id="energy"></span> wh | Latence : <span id="time"></span> ms
+		</div>
+	
+		<!-- Copyright -->
+		<footer>Copyright © 2025 D4G-G5</footer>
+	
+		<!-- JS -->
+		<script src="/js/script.js"></script>
+	</body>
+</html>

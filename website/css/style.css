@@ -1,0 +1,162 @@
+body {
+	user-select: none;
+    font-family: Roboto, sans-serif;
+    background-color: #0e0e0e;
+    color: #f0f0f0; 
+    margin: 40px;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: #4da3ff;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    box-sizing: border-box;
+    transition: border 0.2s ease;
+    resize: none;
+    overflow: hidden;
+}
+
+textarea:focus {
+    border-color: #4da3ff;
+    outline: none;
+}
+
+button {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 10px 25px;
+    background-color: #4da3ff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #1e70b8;
+}
+
+button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.result {
+    margin-top: 25px;
+    padding: 20px;
+    color: #888;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+#summaryLabel {
+    display: none;
+}
+
+#output {
+    display: none;
+}
+
+#copyBtnOutput {
+    display: none;
+}
+
+#metrics {
+    text-align: center;
+    margin-top: 10px;
+    color: #aaa;
+    display: none;
+}
+
+.result p {
+    margin: 10px 0;
+}
+
+form {
+    max-width: 800px;
+	color: #888;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: #141414;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+}
+
+label {
+    display: inline-block;
+    margin-top: 10px;
+    color: #d1d1d1;
+}
+
+footer {
+    text-align: center;
+    color: #888;
+    margin-top: 20px;
+}
+
+.optimized-label {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#charCount {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+.summary-label {
+    text-align: center;
+    margin: 30px 0;
+    font-weight: bold;
+    color: #aaa;
+}
+
+.copy-btn {
+    display: block;
+    margin: 20px auto 0 auto; 
+}
+
+.copy-btn:hover {
+    background-color: #1e70b8;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4da3ff;
+    border-radius: 10px;
+    border: 3px solid #111;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1e70b8;
+}
