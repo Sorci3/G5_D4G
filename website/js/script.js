@@ -1,7 +1,6 @@
 const textarea = document.getElementById("text");
 const charCount = document.getElementById("charCount");
 const copyBtn = document.getElementById("copyBtnOutput");
-const summaryEl = document.getElementById("summary");
 const metricsDiv = document.getElementById("metrics");
 const summaryLabel = document.getElementById("summaryLabel");
 const outputDiv = document.getElementById("output");
@@ -27,11 +26,11 @@ summaryLabel.style.display = "none";
 outputDiv.style.display = "none";
 
 btn.addEventListener("click", async () => {
-    const text = textarea.value;
+    const text = textarea.value.trim();
     const optimized = document.getElementById("optimized").checked;
 
-    if (!text.trim()) {
-        summaryEl.textContent = "";
+    if (!text) {
+        outputDiv.textContent = "";
         copyBtn.style.display = "none";
         metricsDiv.style.display = "none";
         summaryLabel.style.display = "none";
@@ -49,7 +48,7 @@ btn.addEventListener("click", async () => {
         const data = await res.json();
 
         if (data.error) {
-            summaryEl.textContent = "Erreur : " + data.error;
+            outputDiv.textContent = "Erreur : " + data.error;
             copyBtn.style.display = "none";
             metricsDiv.style.display = "none";
             summaryLabel.style.display = "none";
@@ -58,10 +57,9 @@ btn.addEventListener("click", async () => {
         }
 
         const result = data;
-
         const hasSummary = result.summary && result.summary.trim() !== "";
 
-        summaryEl.textContent = result.summary;
+        outputDiv.textContent = result.summary || "";
 
         copyBtn.style.display = hasSummary ? "block" : "none";
         metricsDiv.style.display = hasSummary ? "block" : "none";
@@ -74,7 +72,7 @@ btn.addEventListener("click", async () => {
         }
 
     } catch (error) {
-        summaryEl.textContent = "Erreur lors de la requête : " + error;
+        outputDiv.textContent = "Erreur lors de la requête : " + error;
         copyBtn.style.display = "none";
         metricsDiv.style.display = "none";
         summaryLabel.style.display = "none";
@@ -83,14 +81,9 @@ btn.addEventListener("click", async () => {
 });
 
 copyBtn.addEventListener("click", () => {
-    const summary = summaryEl.textContent;
-
-    if (!summary) {
-        return;
-    }
-
-    navigator.clipboard.writeText(summary)
-        .catch(() => {});
+    const summary = outputDiv.textContent;
+    if (!summary) return;
+    navigator.clipboard.writeText(summary).catch(() => {});
 });
 
 btn.disabled = !textarea.value.trim();

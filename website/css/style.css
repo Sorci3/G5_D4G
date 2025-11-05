@@ -1,6 +1,5 @@
 body {
-	user-select: none;
-    font-family: Roboto, sans-serif;
+    font-family: system-ui, sans-serif;
     background-color: #0e0e0e;
     color: #f0f0f0; 
     margin: 40px;
@@ -23,7 +22,6 @@ textarea {
     background-color: #1a1a1a;
     color: #f0f0f0;
     box-sizing: border-box;
-    transition: border 0.2s ease;
     resize: none;
     overflow: hidden;
 }
@@ -42,7 +40,6 @@ button {
     border-radius: 6px;
     font-size: 15px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
     color: #fff;
 }
 
@@ -58,59 +55,35 @@ button:disabled {
 
 .result {
     margin-top: 25px;
-    padding: 20px;
+    padding: 10px;
     color: #888;
     border-radius: 8px;
     background-color: #1a1a1a;
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
     max-width: 100%;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
 
-#summaryLabel {
-    display: none;
-}
-
-#output {
-    display: none;
-}
-
-#copyBtnOutput {
-    display: none;
-}
-
+#summaryLabel,
+#output,
+#copyBtnOutput,
 #metrics {
-    text-align: center;
-    margin-top: 10px;
-    color: #aaa;
     display: none;
-}
-
-.result p {
-    margin: 10px 0;
 }
 
 form {
     max-width: 800px;
-	color: #888;
+    color: #888;
     margin: 0 auto;
     padding: 25px;
     border-radius: 8px;
     background-color: #141414;
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
 }
 
 label {
     display: inline-block;
     margin-top: 10px;
     color: #d1d1d1;
-}
-
-footer {
-    text-align: center;
-    color: #888;
-    margin-top: 20px;
 }
 
 .optimized-label {
@@ -139,8 +112,15 @@ footer {
     margin: 20px auto 0 auto; 
 }
 
-.copy-btn:hover {
-    background-color: #1e70b8;
+footer {
+    text-align: center;
+    color: #aaa;
+}
+
+#metrics {
+    text-align: center;
+    margin-top: 10px;
+    color: #aaa;
 }
 
 ::-webkit-scrollbar {
