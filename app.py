@@ -1,24 +1,20 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify
 import webbrowser
-import os
 from py.main import summarize_text
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-WEBSITE_DIR = os.path.join(BASE_DIR, "website")
-
-app = Flask(__name__, static_folder=os.path.join(WEBSITE_DIR, "css"), template_folder=WEBSITE_DIR)
+app = Flask(__name__, static_folder="website")
 
 @app.route("/")
 def index():
-    return send_from_directory(WEBSITE_DIR, "index.html")
+    return app.send_static_file("index.html")
 
 @app.route("/css/<path:filename>")
 def serve_css(filename):
-    return send_from_directory(os.path.join(WEBSITE_DIR, "css"), filename)
+    return app.send_static_file(f"css/{filename}")
 
 @app.route("/js/<path:filename>")
 def serve_js(filename):
-    return send_from_directory(os.path.join(WEBSITE_DIR, "js"), filename)
+    return app.send_static_file(f"js/{filename}")
 
 @app.route("/summarize", methods=["POST"])
 def summarize():
