@@ -1,0 +1,8 @@
+flask
+torch
+transformers
+codecarbon
+psutil
+numpy
+peft
+datasets

@@ -1,6 +1,0 @@
-flask
-torch
-transformers
-codecarbon
-psutil
-numpy
